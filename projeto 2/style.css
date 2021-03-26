@@ -6,19 +6,6 @@ html, body, figure, img, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul, li
     text-decoration: none;
 }
 
-.container{
-    width: 100%;
-    max-width: 1125px;
-    margin: 0 auto;
-    padding: 30px;
-}
-
-.linha{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-}
 
 .coluna{
     flex-basis: 49%;
@@ -37,7 +24,7 @@ body{
 /* HEADER */
 header{
     background-color: rgb(247 9 9 / 80%);
-    padding-top: 30px;
+    padding: 30px 30px 0px;
 }
 header .container{
     background-color: rgb(204 204 204);
@@ -52,11 +39,12 @@ header .coluna-esquerda{
     flex-basis: 30%;
 }
 header .coluna-direita{
-    flex-basis: 70%;
+    flex-basis: 60%;
+    text-align: center;
 }
 header .coluna img{
-    max-width: 250px;
-    border-radius: 100%;
+    max-width: 100%;
+    
 }
 header .coluna h1{
     font-size: 1.5rem;
@@ -81,6 +69,9 @@ header .coluna ul li a{
 footer{
     background-color: rgb(117 2 2);
 }
+footer .container{
+    padding: 20px;
+}
 footer nav ul li a{
     color: white;
 }
@@ -90,32 +81,29 @@ footer nav .info-contato li{
 }
 
 footer nav .redes-sociais{
-    display: flex; /* ele coloca o elemento um do lado do outro*/
-    justify-content: center;/*ele ajusta o lugar do elemento e o center bota no centro*/
     border-top: solid rgb(255 255 255 / 20%) 1px;
     margin: 20px 0 50px;
     padding: 50px 0 0;
+    text-align: center;
 }
 footer nav .redes-sociais li{
-    margin: 0px 14px;
+    margin: 15px 28px;
     text-align: center;/*ele alinha o texto no centro*/
+    display: inline-block;
 }
 
 footer nav .redes-sociais  li a img {
     width: 40px;
 }
-footer nav .redes-sociais li a p{
-}
 
 /* PAGINA INICIAL seria o meu main */
 
 main .coluna{
-    flex-basis: 49%;
+    padding: 20px;
 }
 main .coluna section{
-    border: 1px solid #d4e9ff;
+    border-bottom: 1px solid #d4e9ff;
     margin: 0 0 20px;
-    padding: 20px;
     min-width: 187px;
 }
 main .coluna section h2{
@@ -136,12 +124,58 @@ main .coluna section ul li h3{
 main .coluna section ul li strong{
     font-size: 0.9rem;
     font-weight: 500;
-    margin: 5px 0 10px;
+    margin: 5px 0 10px; 
     display: inline-block;
 }
-main .coluna section ul li p{}
 
 
 /* EXTRAS */
 
 /* @MEDIA */
+@media only screen and (min-width: 768px){
+    .linha{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    footer nav .redes-sociais{
+        display: flex; /* ele coloca o elemento um do lado do outro*/
+        justify-content: center;/*ele ajusta o lugar do elemento e o center bota no centro*/
+    }
+    header{
+        padding-top: 30px 0 0;
+    }
+    header .coluna img{
+        max-width: 250px;
+        border-radius: 100%;
+    }
+    .container{
+        width: 100%;
+        max-width: 1125px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    header .coluna-direita{
+        text-align: left;
+    }
+    main .coluna section{
+        border: 1px solid #d4e9ff;
+        padding: 20px;
+    }
+    main .coluna{
+        flex-basis: 49%;
+        padding: 0;
+    }
+    footer nav .redes-sociais li {
+        margin: 0 14px;
+        display: initial;
+    }
+}    
+
+@media only screen and (min-width: 991px){
+    
+    header .coluna-direita{
+        flex-basis: 70%;
+    }
+}
